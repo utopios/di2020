@@ -99,38 +99,71 @@ namespace FormationCesiDi2020
             #endregion
 
             #region exercice 1
-            decimal netImposable, reference, impot;
-            int nbAdule;
-            int nbEnfant;
-           
-            Console.WriteLine("=====Calcule Impôt=======");
-            Console.Write("Merci de saisir votre net imposable : ");
-            netImposable = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Merci de saisir le nombre d'adultes : ");
-            nbAdule = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Merci de saisir le nombre d'enfants : ");
-            nbEnfant = Convert.ToInt32(Console.ReadLine());
-            decimal nbParts = nbAdule + (nbEnfant > 2 ? nbEnfant - 1 : (decimal)nbEnfant / 2);
-            reference = netImposable / nbParts;
-            switch(reference)
+            //decimal netImposable, reference, impot;
+            //int nbAdule;
+            //int nbEnfant;
+
+            //Console.WriteLine("=====Calcule Impôt=======");
+            //Console.Write("Merci de saisir votre net imposable : ");
+            //netImposable = Convert.ToDecimal(Console.ReadLine());
+            //Console.Write("Merci de saisir le nombre d'adultes : ");
+            //nbAdule = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Merci de saisir le nombre d'enfants : ");
+            //nbEnfant = Convert.ToInt32(Console.ReadLine());
+            //decimal nbParts = nbAdule + (nbEnfant > 2 ? nbEnfant - 1 : (decimal)nbEnfant / 2);
+            //reference = netImposable / nbParts;
+            //switch(reference)
+            //{
+            //    case decimal net  when net >=158122 :
+            //        impot = (netImposable * 0.45M) - 20405.78M * nbParts; 
+            //        break;
+            //    case decimal net when net < 158122 && net >= 73516:
+            //        impot = (netImposable * 0.41M) - 14080.90M * nbParts;
+            //        break;
+            //    case decimal net when net < 73516 && net >= 25710:
+            //        impot = (netImposable * 0.30M) - 5994.14M * nbParts;
+            //        break;
+            //    case decimal net when net < 25710 && net >= 10084:
+            //        impot = (netImposable * 0.11M) - 1109.24M * nbParts;
+            //        break;
+            //    default:
+            //        impot = 0;
+            //        break;
+            //}
+            //Console.WriteLine($"Votre impot est de {impot}euros");
+            #endregion
+
+            #region exercice 2
+            Console.WriteLine("=====Calcule de moyenne=====");
+            double min = 0, max = 0, moyenne, total = 0, note;
+            int count = 5;
+            for(int i=1; i<= count; i++)
             {
-                case decimal net  when net >=158122 :
-                    impot = (netImposable * 0.45M) - 20405.78M * nbParts; 
-                    break;
-                case decimal net when net < 158122 && net >= 73516:
-                    impot = (netImposable * 0.41M) - 14080.90M * nbParts;
-                    break;
-                case decimal net when net < 73516 && net >= 25710:
-                    impot = (netImposable * 0.30M) - 5994.14M * nbParts;
-                    break;
-                case decimal net when net < 25710 && net >= 10084:
-                    impot = (netImposable * 0.11M) - 1109.24M * nbParts;
-                    break;
-                default:
-                    impot = 0;
-                    break;
+                Console.Write($"Merci de saisir la note N°{i} : ");
+                note = Convert.ToDouble(Console.ReadLine());
+                total += note;
+                if(i ==1) {
+                    min = note;
+                    max = note;
+                }
+                else
+                {
+                    if(note >= max)
+                    {
+                        max = note;
+                    }
+                    else if(note <= min)
+                    {
+                        min = note;
+                    }
+                }
             }
-            Console.WriteLine($"Votre impot est de {impot}euros");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"La note min est de {min}");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"La note max est de {max}");
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine($"La note moyenne est de {total/count}");
             #endregion
         }
     }
