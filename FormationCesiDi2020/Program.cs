@@ -262,6 +262,7 @@ namespace FormationCesiDi2020
                 Console.WriteLine("1---Effectuer le tirage");
                 Console.WriteLine("2---Liste des personnes déjà tirées");
                 Console.WriteLine("3---Liste des personnes restantes");
+                Console.WriteLine("4---Recherche");
                 Console.Write("Faites votre choix : ");
                 choix = Console.ReadLine();
                 Console.Clear();
@@ -295,6 +296,27 @@ namespace FormationCesiDi2020
                             {
                                 Console.WriteLine(nom);
                             }
+                        }
+                        break;
+                    case "4":
+                        Console.Write("Merci de saisir le nom recherché : ");
+                        string search = Console.ReadLine();
+                        bool found = false;
+                        foreach(string n in personnesTirees)
+                        {
+                            if(n == search)
+                            {
+                                found = true;
+                                break;
+                            }
+                        }
+                        if(found)
+                        {
+                            Console.WriteLine("Ce nom est déjà tiré");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Non tiré");
                         }
                         break;
                 }
