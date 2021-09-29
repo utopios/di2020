@@ -6,6 +6,7 @@ namespace FormationCesiDi2020
     {
         static void Main(string[] args)
         {
+            #region Cours Base c#
             //Console.WriteLine("Hello World!");
             //Console.WriteLine("hello from ihab");
             //Déclaration de variables
@@ -81,20 +82,56 @@ namespace FormationCesiDi2020
 
             //while
 
-            int age = 33;
+            //int age = 33;
 
-            //while(age < 18)
+            ////while(age < 18)
+            ////{
+            ////    Console.WriteLine("Mineur");
+            ////    age++;
+            ////}
+
+            ////do while
+            //do
             //{
             //    Console.WriteLine("Mineur");
             //    age++;
-            //}
+            //} while (age < 18);
+            #endregion
 
-            //do while
-            do
+            #region exercice 1
+            decimal netImposable, reference, impot;
+            int nbAdule;
+            int nbEnfant;
+           
+            Console.WriteLine("=====Calcule Impôt=======");
+            Console.Write("Merci de saisir votre net imposable : ");
+            netImposable = Convert.ToDecimal(Console.ReadLine());
+            Console.Write("Merci de saisir le nombre d'adultes : ");
+            nbAdule = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Merci de saisir le nombre d'enfants : ");
+            nbEnfant = Convert.ToInt32(Console.ReadLine());
+            decimal nbParts = nbAdule + (nbEnfant > 2 ? nbEnfant - 1 : (decimal)nbEnfant / 2);
+            reference = netImposable / nbParts;
+            switch(reference)
             {
-                Console.WriteLine("Mineur");
-                age++;
-            } while (age < 18);
+                case decimal net  when net >=158122 :
+                    impot = (netImposable * 0.45M) - 20405.78M * nbParts; 
+                    break;
+                case decimal net when net < 158122 && net >= 73516:
+                    impot = (netImposable * 0.41M) - 14080.90M * nbParts;
+                    break;
+                case decimal net when net < 73516 && net >= 25710:
+                    impot = (netImposable * 0.30M) - 5994.14M * nbParts;
+                    break;
+                case decimal net when net < 25710 && net >= 10084:
+                    impot = (netImposable * 0.11M) - 1109.24M * nbParts;
+                    break;
+                default:
+                    impot = 0;
+                    break;
+            }
+            Console.WriteLine($"Votre impot est de {impot}euros");
+            #endregion
         }
     }
 }
