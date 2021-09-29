@@ -134,36 +134,82 @@ namespace FormationCesiDi2020
             #endregion
 
             #region exercice 2
+            //Console.WriteLine("=====Calcule de moyenne=====");
+            //double min = 0, max = 0, moyenne, total = 0, note;
+            //int count = 5;
+            //for(int i=1; i<= count; i++)
+            //{
+            //    Console.Write($"Merci de saisir la note N°{i} : ");
+            //    note = Convert.ToDouble(Console.ReadLine());
+            //    total += note;
+            //    if(i ==1) {
+            //        min = note;
+            //        max = note;
+            //    }
+            //    else
+            //    {
+            //        if(note >= max)
+            //        {
+            //            max = note;
+            //        }
+            //        else if(note <= min)
+            //        {
+            //            min = note;
+            //        }
+            //    }
+            //}
+            //Console.ForegroundColor = ConsoleColor.Red;
+            //Console.WriteLine($"La note min est de {min}");
+            //Console.ForegroundColor = ConsoleColor.Green;
+            //Console.WriteLine($"La note max est de {max}");
+            //Console.ForegroundColor = ConsoleColor.Black;
+            //Console.WriteLine($"La note moyenne est de {total/count}");
+            #endregion
+            #region exercice 3
             Console.WriteLine("=====Calcule de moyenne=====");
-            double min = 0, max = 0, moyenne, total = 0, note;
-            int count = 5;
-            for(int i=1; i<= count; i++)
+            double min = 0, max = 0, moyenne, total = 0, note = 0;
+            int count = 0;
+            do
             {
-                Console.Write($"Merci de saisir la note N°{i} : ");
+                Console.Write($"Merci de saisir la note N°{count+1} : ");
                 note = Convert.ToDouble(Console.ReadLine());
-                total += note;
-                if(i ==1) {
-                    min = note;
-                    max = note;
+                if(note == 999)
+                {
+                    break;
+                }
+                else if(note < 0 || note > 20)
+                {
+                    Console.WriteLine("Merci de saisir une note correct");
                 }
                 else
                 {
-                    if(note >= max)
-                    {
-                        max = note;
-                    }
-                    else if(note <= min)
+                    total += note;
+                    if (count == 1)
                     {
                         min = note;
+                        max = note;
                     }
+                    else
+                    {
+                        if (note >= max)
+                        {
+                            max = note;
+                        }
+                        else if (note <= min)
+                        {
+                            min = note;
+                        }
+                    }
+                    count++;
                 }
-            }
+                
+            } while (note != 999);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"La note min est de {min}");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"La note max est de {max}");
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine($"La note moyenne est de {total/count}");
+            Console.WriteLine($"La note moyenne est de {total / count}");
             #endregion
         }
     }
