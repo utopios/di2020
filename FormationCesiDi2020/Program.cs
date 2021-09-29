@@ -235,9 +235,59 @@ namespace FormationCesiDi2020
             //Console.WriteLine(chaine[2]);
 
             //Pour générer un nombre aléatoire en c#
-            Random r = new Random();
-            int aleat = r.Next(100);
-            Console.WriteLine(aleat);
+            //Random r = new Random();
+            //int aleat = r.Next(100);
+            //Console.WriteLine(aleat);
+            #endregion
+
+            #region TP partie 1
+            string[] noms = new string[] { "toto", "tata", "titi", "minet" };
+            string[] personnesTirees = new string[noms.Length];
+
+            Console.WriteLine("===== Le grand tirage =====");
+            string choix;
+            do
+            {
+                Console.WriteLine("1---Effectuer le tirage");
+                Console.WriteLine("2---Liste des personnes déjà tirées");
+                Console.WriteLine("3---Liste des personnes restantes");
+                Console.Write("Faites votre choix : ");
+                choix = Console.ReadLine();
+                Console.Clear();
+                switch(choix)
+                {
+                    case "1":
+                        //Effectuer le tirage
+                        Random r = new Random();                        
+                        int index;
+                        do
+                        {
+                            index = r.Next(noms.Length);                     
+                        } while (noms[index] == null);
+                        personnesTirees[index] = noms[index];
+                        noms[index] = null;
+                        Console.WriteLine("Tirage effecuté");
+                        break;
+                    case "2":
+                        foreach(string nom in personnesTirees)
+                        {
+                            if(nom != null)
+                            {
+                                Console.WriteLine(nom);
+                            }
+                        }
+                        break;
+                    case "3":
+                        foreach (string nom in noms)
+                        {
+                            if (nom != null)
+                            {
+                                Console.WriteLine(nom);
+                            }
+                        }
+                        break;
+                }
+            } while (choix != "0");
             #endregion
         }
     }
