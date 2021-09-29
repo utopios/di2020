@@ -241,9 +241,20 @@ namespace FormationCesiDi2020
             #endregion
 
             #region TP partie 1
-            string[] noms = new string[] { "toto", "tata", "titi", "minet" };
-            string[] personnesTirees = new string[noms.Length];
 
+            Console.Write("Merci de saisir la taille du tableau : ");
+            int taille = Convert.ToInt32(Console.ReadLine());
+
+            string[] noms = new string[taille];
+            string[] personnesTirees = new string[noms.Length];
+            Console.Clear();
+            for(int i=0; i < taille; i++)
+            {
+                Console.Write($"Merci de saisir le nom à la case n° {i + 1} : ");
+                noms[i] = Console.ReadLine();
+            }
+            Console.Clear();
+            Console.WriteLine("Saisie OK");
             Console.WriteLine("===== Le grand tirage =====");
             string choix;
             do
