@@ -165,51 +165,74 @@ namespace FormationCesiDi2020
             //Console.ForegroundColor = ConsoleColor.Black;
             //Console.WriteLine($"La note moyenne est de {total/count}");
             #endregion
+
             #region exercice 3
-            Console.WriteLine("=====Calcule de moyenne=====");
-            double min = 0, max = 0, moyenne, total = 0, note = 0;
-            int count = 0;
-            do
+            //Console.WriteLine("=====Calcule de moyenne=====");
+            //double min = 0, max = 0, moyenne, total = 0, note = 0;
+            //int count = 0;
+            //do
+            //{
+            //    Console.Write($"Merci de saisir la note N°{count+1} : ");
+            //    note = Convert.ToDouble(Console.ReadLine());
+            //    if(note == 999)
+            //    {
+            //        break;
+            //    }
+            //    else if(note < 0 || note > 20)
+            //    {
+            //        Console.WriteLine("Merci de saisir une note correct");
+            //    }
+            //    else
+            //    {
+            //        total += note;
+            //        if (count == 1)
+            //        {
+            //            min = note;
+            //            max = note;
+            //        }
+            //        else
+            //        {
+            //            if (note >= max)
+            //            {
+            //                max = note;
+            //            }
+            //            else if (note <= min)
+            //            {
+            //                min = note;
+            //            }
+            //        }
+            //        count++;
+            //    }
+
+            //} while (note != 999);
+            //Console.ForegroundColor = ConsoleColor.Red;
+            //Console.WriteLine($"La note min est de {min}");
+            //Console.ForegroundColor = ConsoleColor.Green;
+            //Console.WriteLine($"La note max est de {max}");
+            //Console.ForegroundColor = ConsoleColor.Black;
+            //Console.WriteLine($"La note moyenne est de {total / count}");
+            #endregion
+
+            #region suite cours
+            //Tableau
+            //int[] tabEntiers = new int[4];
+
+            //for(int i=0; i < tabEntiers.Length; i++)
+            //{
+            //    Console.Write($"Merci de saisir la valeur de la case N° {i} : ");
+            //    tabEntiers[i] = Convert.ToInt32(Console.ReadLine());
+            //    Console.WriteLine(tabEntiers[i]);
+            //}
+
+            string[] mots = new string[] { "test1", "test2", "test3"};
+            foreach(string m in mots)
             {
-                Console.Write($"Merci de saisir la note N°{count+1} : ");
-                note = Convert.ToDouble(Console.ReadLine());
-                if(note == 999)
-                {
-                    break;
-                }
-                else if(note < 0 || note > 20)
-                {
-                    Console.WriteLine("Merci de saisir une note correct");
-                }
-                else
-                {
-                    total += note;
-                    if (count == 1)
-                    {
-                        min = note;
-                        max = note;
-                    }
-                    else
-                    {
-                        if (note >= max)
-                        {
-                            max = note;
-                        }
-                        else if (note <= min)
-                        {
-                            min = note;
-                        }
-                    }
-                    count++;
-                }
-                
-            } while (note != 999);
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"La note min est de {min}");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"La note max est de {max}");
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine($"La note moyenne est de {total / count}");
+                Console.WriteLine(m);
+            }
+
+            string chaine = "coucou";
+
+            Console.WriteLine(chaine[2]);
             #endregion
         }
     }
