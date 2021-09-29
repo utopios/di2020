@@ -224,15 +224,20 @@ namespace FormationCesiDi2020
             //    Console.WriteLine(tabEntiers[i]);
             //}
 
-            string[] mots = new string[] { "test1", "test2", "test3"};
-            foreach(string m in mots)
-            {
-                Console.WriteLine(m);
-            }
+            //string[] mots = new string[] { "test1", "test2", "test3"};
+            //foreach(string m in mots)
+            //{
+            //    Console.WriteLine(m);
+            //}
 
-            string chaine = "coucou";
+            //string chaine = "coucou";
 
-            Console.WriteLine(chaine[2]);
+            //Console.WriteLine(chaine[2]);
+
+            //Pour générer un nombre aléatoire en c#
+            Random r = new Random();
+            int aleat = r.Next(100);
+            Console.WriteLine(aleat);
             #endregion
         }
     }
