@@ -337,7 +337,11 @@ namespace FormationCesiDi2020
             //Person p2 = new Person("toto", "tata",44);
             //p2.Afficher("Bonjour");
 
-            Person[] tabPersons = Person.GetPersons();
+            //Person[] tabPersons = Person.GetPersons();
+
+            //Exercice 1 POO
+            IHM ihm = new IHM();
+            ihm.Start();
             #endregion
         }
     }
