@@ -340,8 +340,13 @@ namespace FormationCesiDi2020
             //Person[] tabPersons = Person.GetPersons();
 
             //Exercice 1 POO
-            IHM ihm = new IHM();
-            ihm.Start();
+            //IHM ihm = new IHM();
+            //ihm.Start();
+
+            //Héritage
+            Student s = new Student("toto", "tata", 20, 5);
+            //s.Afficher();
+            Console.WriteLine(s);
             #endregion
         }
     }
