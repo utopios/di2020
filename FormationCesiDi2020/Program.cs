@@ -1,4 +1,5 @@
 ﻿using System;
+using FormationCesiDi2020.Classes;
 
 namespace FormationCesiDi2020
 {
@@ -242,85 +243,99 @@ namespace FormationCesiDi2020
 
             #region TP partie 1
 
-            Console.Write("Merci de saisir la taille du tableau : ");
-            int taille = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Merci de saisir la taille du tableau : ");
+            //int taille = Convert.ToInt32(Console.ReadLine());
 
-            string[] noms = new string[taille];
-            string[] personnesTirees = new string[noms.Length];
-            Console.Clear();
-            for(int i=0; i < taille; i++)
-            {
-                Console.Write($"Merci de saisir le nom à la case n° {i + 1} : ");
-                noms[i] = Console.ReadLine();
-            }
-            Console.Clear();
-            Console.WriteLine("Saisie OK");
-            Console.WriteLine("===== Le grand tirage =====");
-            string choix;
-            do
-            {
-                Console.WriteLine("1---Effectuer le tirage");
-                Console.WriteLine("2---Liste des personnes déjà tirées");
-                Console.WriteLine("3---Liste des personnes restantes");
-                Console.WriteLine("4---Recherche");
-                Console.Write("Faites votre choix : ");
-                choix = Console.ReadLine();
-                Console.Clear();
-                switch(choix)
-                {
-                    case "1":
-                        //Effectuer le tirage
-                        Random r = new Random();                        
-                        int index;
-                        do
-                        {
-                            index = r.Next(noms.Length);                     
-                        } while (noms[index] == null);
-                        personnesTirees[index] = noms[index];
-                        noms[index] = null;
-                        Console.WriteLine("Tirage effecuté");
-                        break;
-                    case "2":
-                        foreach(string nom in personnesTirees)
-                        {
-                            if(nom != null)
-                            {
-                                Console.WriteLine(nom);
-                            }
-                        }
-                        break;
-                    case "3":
-                        foreach (string nom in noms)
-                        {
-                            if (nom != null)
-                            {
-                                Console.WriteLine(nom);
-                            }
-                        }
-                        break;
-                    case "4":
-                        Console.Write("Merci de saisir le nom recherché : ");
-                        string search = Console.ReadLine();
-                        bool found = false;
-                        foreach(string n in personnesTirees)
-                        {
-                            if(n == search)
-                            {
-                                found = true;
-                                break;
-                            }
-                        }
-                        if(found)
-                        {
-                            Console.WriteLine("Ce nom est déjà tiré");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Non tiré");
-                        }
-                        break;
-                }
-            } while (choix != "0");
+            //string[] noms = new string[taille];
+            //string[] personnesTirees = new string[noms.Length];
+            //Console.Clear();
+            //for(int i=0; i < taille; i++)
+            //{
+            //    Console.Write($"Merci de saisir le nom à la case n° {i + 1} : ");
+            //    noms[i] = Console.ReadLine();
+            //}
+            //Console.Clear();
+            //Console.WriteLine("Saisie OK");
+            //Console.WriteLine("===== Le grand tirage =====");
+            //string choix;
+            //do
+            //{
+            //    Console.WriteLine("1---Effectuer le tirage");
+            //    Console.WriteLine("2---Liste des personnes déjà tirées");
+            //    Console.WriteLine("3---Liste des personnes restantes");
+            //    Console.WriteLine("4---Recherche");
+            //    Console.Write("Faites votre choix : ");
+            //    choix = Console.ReadLine();
+            //    Console.Clear();
+            //    switch(choix)
+            //    {
+            //        case "1":
+            //            //Effectuer le tirage
+            //            Random r = new Random();                        
+            //            int index;
+            //            do
+            //            {
+            //                index = r.Next(noms.Length);                     
+            //            } while (noms[index] == null);
+            //            personnesTirees[index] = noms[index];
+            //            noms[index] = null;
+            //            Console.WriteLine("Tirage effecuté");
+            //            break;
+            //        case "2":
+            //            foreach(string nom in personnesTirees)
+            //            {
+            //                if(nom != null)
+            //                {
+            //                    Console.WriteLine(nom);
+            //                }
+            //            }
+            //            break;
+            //        case "3":
+            //            foreach (string nom in noms)
+            //            {
+            //                if (nom != null)
+            //                {
+            //                    Console.WriteLine(nom);
+            //                }
+            //            }
+            //            break;
+            //        case "4":
+            //            Console.Write("Merci de saisir le nom recherché : ");
+            //            string search = Console.ReadLine();
+            //            bool found = false;
+            //            foreach(string n in personnesTirees)
+            //            {
+            //                if(n == search)
+            //                {
+            //                    found = true;
+            //                    break;
+            //                }
+            //            }
+            //            if(found)
+            //            {
+            //                Console.WriteLine("Ce nom est déjà tiré");
+            //            }
+            //            else
+            //            {
+            //                Console.WriteLine("Non tiré");
+            //            }
+            //            break;
+            //    }
+            //} while (choix != "0");
+            #endregion
+
+            #region POO En c#
+            //A partir d'une classe, on peut créer des instances de classe => objets.
+            //Person p = new Person();
+            //p.firstName = "ihab";
+            //p.SetFirstName("ihab");
+            //p.FirstName = "ihab";
+            //p.LastName = "abadi";
+            ////Console.WriteLine(p.firstName + " "+p.lastName);
+            //p.Afficher();
+
+            Person p2 = new Person("toto", "tata",44);
+            p2.Afficher("Bonjour");
             #endregion
         }
     }
