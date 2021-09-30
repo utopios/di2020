@@ -344,7 +344,7 @@ namespace FormationCesiDi2020
             //ihm.Start();
 
             //Héritage
-            Student s = new Student("toto", "tata", 20, 5);
+            Person s = new Student("toto", "tata", 20, 5);
             //s.Afficher();
             Console.WriteLine(s);
             #endregion
