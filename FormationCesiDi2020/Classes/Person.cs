@@ -75,6 +75,10 @@ namespace FormationCesiDi2020.Classes
             Age = age;
         }
 
+        public static Person[] GetPersons()
+        {
+            return new Person[] { new Person("toto", "tata", 40), new Person("titi", "minet", 50) };
+        }
 
         //Destructeur
         //~Person()

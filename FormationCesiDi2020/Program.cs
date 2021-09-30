@@ -334,8 +334,10 @@ namespace FormationCesiDi2020
             ////Console.WriteLine(p.firstName + " "+p.lastName);
             //p.Afficher();
 
-            Person p2 = new Person("toto", "tata",44);
-            p2.Afficher("Bonjour");
+            //Person p2 = new Person("toto", "tata",44);
+            //p2.Afficher("Bonjour");
+
+            Person[] tabPersons = Person.GetPersons();
             #endregion
         }
     }
