@@ -25,8 +25,11 @@ namespace FormationCesiDi2020.Classes
 
         public static int Compteur { get => compteur; }
 
-
-        public Salarie(string nomComplet, string matricule, string categorie, string service, decimal salaire)
+        public Salarie()
+        {
+            compteur++;
+        }
+        public Salarie(string nomComplet, string matricule, string categorie, string service, decimal salaire) : this()
         {
             NomComplet = nomComplet;
             Matricule = matricule;
@@ -34,12 +37,17 @@ namespace FormationCesiDi2020.Classes
             Service = service;
             Salaire = salaire;
             totalSalaire += salaire;
-            compteur++;
+            
         }
 
-        public void AfficherSalaire()
+        public virtual decimal CalculerSalaire()
         {
-            Console.WriteLine($"Nom : {NomComplet}, Salaire : {Salaire} euros");
+            return Salaire;
+        }
+
+        public virtual void AfficherSalaire()
+        {
+            Console.WriteLine($"Nom : {NomComplet}, Salaire : {CalculerSalaire()} euros");
         }
 
         

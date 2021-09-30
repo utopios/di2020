@@ -1,7 +1,7 @@
 ﻿using System;
 namespace FormationCesiDi2020.Classes
 {
-    public abstract class Person
+    public  class Person
     {
         //Attributs
         //Niveau d'accessibilité, public, private, protected
@@ -19,7 +19,7 @@ namespace FormationCesiDi2020.Classes
             Console.WriteLine(FirstName + " " + LastName +" "+ Age);
         }
 
-        public abstract void MethodeAbstract();
+       // public abstract void MethodeAbstract();
         public void Afficher(string message)
         {
             //Console.WriteLine($"{message}, {FirstName}, {LastName}");

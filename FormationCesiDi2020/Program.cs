@@ -344,9 +344,11 @@ namespace FormationCesiDi2020
             //ihm.Start();
 
             //Héritage
-            Person s = new Student("toto", "tata", 20, 5);
-            //s.Afficher();
-            Console.WriteLine(s);
+            //Person s = new Student("toto", "tata", 20, 5);
+            ////s.Afficher();
+            //Console.WriteLine(s);
+
+            new IHMEmploye().Start();
             #endregion
         }
     }

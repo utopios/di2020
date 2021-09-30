@@ -25,9 +25,9 @@ namespace FormationCesiDi2020.Classes
             return $"Nom complet {FirstName} {LastName}, Age {Age}";
         }
 
-        public override void MethodeAbstract()
-        {
-            throw new NotImplementedException();
-        }
+        //public override void MethodeAbstract()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
