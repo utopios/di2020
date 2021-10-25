@@ -38,5 +38,19 @@ namespace FormationCesiDi2020.Classes
             }
             return default(T);
         }
+
+        public T Search(Func<T, bool> searchMethod)
+        {
+            T elementFound = default(T);
+            foreach(T element in elements)
+            {
+                if(searchMethod(element))
+                {
+                    elementFound = element;
+                    break;
+                }
+            }
+            return elementFound;
+        }
     }
 }

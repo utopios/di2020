@@ -390,7 +390,7 @@ namespace FormationCesiDi2020
             #endregion
 
             #region poo c# passage de paramètres, deleguate, event et expression lambda
-            Calculatrice calculatrice = new Calculatrice();
+            //Calculatrice calculatrice = new Calculatrice();
             //int a, b = 10;
             //Passage de paramètre par valeur pour les variables de types primitives (int, char, double...).
             //calculatrice.Addition(a, b);
@@ -398,8 +398,25 @@ namespace FormationCesiDi2020
             //On ne peut pas passer des objets par valeur, par contre on peut passer des variables primitives par référence.
             //calculatrice.AdditionParReferenceOut(out a, ref b);
             //Console.WriteLine(a);
-            calculatrice.MethodeCalcule(30, 40, Soustraction);
+            //calculatrice.MethodeCalcule(30, 40, Soustraction);
+
+            Pile<string> pileString = new Pile<string>(4);
+            pileString.Empiler("toto");
+            pileString.Empiler("minet");
+            //string element = pileString.Search(searchMinet);
+            //string element = pileString.Search(delegate (string search)
+            //{
+            //    return search == "minet";
+            //});
+            //Expression lambda
+            string element = pileString.Search(search => search == "minet");
+            string elementToto = pileString.Search(search => search == "toto");
             #endregion
+        }
+
+        static bool searchMinet(string search)
+        {
+            return search == "minet";
         }
 
         static int Soustraction(int a, int b)
