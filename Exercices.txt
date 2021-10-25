@@ -5,6 +5,7 @@ La classe pile a :
     - Une méthode pour empiler un élément.
     - Une méthode pour dépiler.
     - Une méthode pour récupérer l'élément à l'emplacement i.
+    - Une méthode rechercher qui accepte comme paramètre la méthode de recherche.
 
 Exercice List
 Dans le TP employé, il faut remplacer l'utilisation des tableaux par des listes.
