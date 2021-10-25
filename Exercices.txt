@@ -1,7 +1,12 @@
-﻿Exercice générique
+﻿Exercice générique Pile
 Créer une classe générique Pile
 La classe pile a :
     - Un tableau d'éléments.
     - Une méthode pour empiler un élément.
     - Une méthode pour dépiler.
     - Une méthode pour récupérer l'élément à l'emplacement i.
+
+Exercice List
+Dans le TP employé, il faut remplacer l'utilisation des tableaux par des listes.
+
+
