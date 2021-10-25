@@ -348,7 +348,13 @@ namespace FormationCesiDi2020
             ////s.Afficher();
             //Console.WriteLine(s);
 
-            new IHMEmploye().Start();
+            //new IHMEmploye().Start();
+            #endregion
+
+            #region POO C# Générique
+            Maison<Person> maisonPerson = new Maison<Person>();
+            maisonPerson.AjouterElement(new Person() { FirstName = "ihab", LastName = "abadi" });
+            Console.WriteLine(maisonPerson.Element.GetType());
             #endregion
         }
     }

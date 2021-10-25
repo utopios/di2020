@@ -1,0 +1,7 @@
+﻿Exercice générique
+Créer une classe générique Pile
+La classe pile a :
+    - Un tableau d'éléments.
+    - Une méthode pour empiler un élément.
+    - Une méthode pour dépiler.
+    - Une méthode pour récupérer l'élément à l'emplacement i.
