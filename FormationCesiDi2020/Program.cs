@@ -384,9 +384,21 @@ namespace FormationCesiDi2020
             //Console.WriteLine(listeString.Count);
 
             //Dictionary
-            Dictionary<string, int> testDico = new Dictionary<string, int>();
-            testDico.Add("toto", 3);
-            testDico.Add("titi", 6);
+            //Dictionary<string, int> testDico = new Dictionary<string, int>();
+            //testDico.Add("toto", 3);
+            //testDico.Add("titi", 6);
+            #endregion
+
+            #region poo c# passage de paramètres, deleguate, event et expression lambda
+            Calculatrice calculatrice = new Calculatrice();
+            int a, b = 10;
+            //Passage de paramètre par valeur pour les variables de types primitives (int, char, double...).
+            //calculatrice.Addition(a, b);
+            //Pour les variables de type object, le passage de paramètres se fait par référence.
+            //On ne peut pas passer des objets par valeur, par contre on peut passer des variables primitives par référence.
+            calculatrice.AdditionParReferenceOut(out a, ref b);
+            Console.WriteLine(a);
+
             #endregion
         }
     }
