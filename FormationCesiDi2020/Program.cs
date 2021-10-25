@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FormationCesiDi2020.Classes;
 
 namespace FormationCesiDi2020
@@ -358,15 +359,34 @@ namespace FormationCesiDi2020
 
             //Pile
 
-            Pile<int> pileEntier = new Pile<int>(3);
-            pileEntier.Empiler(1);
-            pileEntier.Empiler(4);
-            pileEntier.Empiler(5);
-            Console.WriteLine(pileEntier.GetElement(2));
-            Console.WriteLine(pileEntier.GetElement(3));
-            pileEntier.Depiler();
-            Console.WriteLine(pileEntier.GetElement(3));
+            //Pile<int> pileEntier = new Pile<int>(3);
+            //pileEntier.Empiler(1);
+            //pileEntier.Empiler(4);
+            //pileEntier.Empiler(5);
+            //Console.WriteLine(pileEntier.GetElement(2));
+            //Console.WriteLine(pileEntier.GetElement(3));
+            //pileEntier.Depiler();
+            //Console.WriteLine(pileEntier.GetElement(3));
 
+            //List
+            //List<string> listeString = new List<string>();
+            //List<string> sousListeString = new List<string>() { "titi", "minet" };
+            ////Pour ajouter, on a la méthode add, 
+            //listeString.Add("toto");
+            //listeString.Add("tata");
+            //listeString.AddRange(sousListeString);
+
+            ////Pour supprimer, on a la méthode remove, ou removeAtt avec comme paramètre l'index de l'élément.
+            //listeString.Remove("toto");
+            //listeString.RemoveAt(2);
+
+            ////Pour récupérer la taille d'une liste.
+            //Console.WriteLine(listeString.Count);
+
+            //Dictionary
+            Dictionary<string, int> testDico = new Dictionary<string, int>();
+            testDico.Add("toto", 3);
+            testDico.Add("titi", 6);
             #endregion
         }
     }
