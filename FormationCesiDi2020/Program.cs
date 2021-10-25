@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using FormationCesiDi2020.Classes;
 
 namespace FormationCesiDi2020
@@ -400,17 +401,20 @@ namespace FormationCesiDi2020
             //Console.WriteLine(a);
             //calculatrice.MethodeCalcule(30, 40, Soustraction);
 
-            Pile<string> pileString = new Pile<string>(4);
-            pileString.Empiler("toto");
-            pileString.Empiler("minet");
+            //Pile<string> pileString = new Pile<string>(4);
+            //pileString.Empiler("toto");
+            //pileString.Empiler("minet");
             //string element = pileString.Search(searchMinet);
             //string element = pileString.Search(delegate (string search)
             //{
             //    return search == "minet";
             //});
             //Expression lambda
-            string element = pileString.Search(search => search == "minet");
-            string elementToto = pileString.Search(search => search == "toto");
+            //string element = pileString.Search(search => search == "minet");
+            //string elementToto = pileString.Search(search => search == "toto");
+            //Exemple d'expression lambda avec les delegates.
+            List<string> liste = new List<string>() { "toto", "tata" };
+            liste.Find(x => x.Contains("t"));
             #endregion
         }
 
