@@ -29,7 +29,7 @@ namespace CompteBancaire.Classes
         public List<Operation> Operations { get => operations; set => operations = value; }
         public int Numero { get => numero; }
 
-        public bool Depot(Operation o)
+        public virtual bool Depot(Operation o)
         {
             if(o.Montant > 0)
             {
@@ -40,7 +40,7 @@ namespace CompteBancaire.Classes
             return false;
         }
 
-        public bool Retrait(Operation o)
+        public virtual bool Retrait(Operation o)
         {
             if(o.Montant < 0 && Solde >= (-1)*o.Montant) {
                 Operations.Add(o);
