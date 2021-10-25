@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace FormationCesiDi2020.Classes
 {
     public class IHMEmploye
     {
-        Salarie[] salaries;
+        List<Salarie> salaries;
         int compteur;
         
         public IHMEmploye()
         {
-            salaries = new Salarie[20];
-            compteur = 0;
+            salaries = new List<Salarie>();
+            //compteur = 0;
         }
 
 
@@ -73,14 +75,15 @@ namespace FormationCesiDi2020.Classes
             {
                 employe = new Salarie(nomComplet, matricule, categorie, service, salaire);
             }
-            if(compteur < salaries.Length - 1)
-            {
-                salaries[compteur++] = employe;
-            }
-            else
-            {
-                Console.WriteLine("On ne recrute plus");
-            }
+            //if(compteur < salaries.Length - 1)
+            //{
+            //    salaries[compteur++] = employe;
+            //}
+            //else
+            //{
+            //    Console.WriteLine("On ne recrute plus");
+            //}
+            salaries.Add(employe);
         }
 
         private void AfficherSalaire()
