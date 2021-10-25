@@ -352,9 +352,21 @@ namespace FormationCesiDi2020
             #endregion
 
             #region POO C# Générique
-            Maison<Person> maisonPerson = new Maison<Person>();
-            maisonPerson.AjouterElement(new Person() { FirstName = "ihab", LastName = "abadi" });
-            Console.WriteLine(maisonPerson.Element.GetType());
+            //Maison<Person> maisonPerson = new Maison<Person>();
+            //maisonPerson.AjouterElement(new Person() { FirstName = "ihab", LastName = "abadi" });
+            //Console.WriteLine(maisonPerson.Element.GetType());
+
+            //Pile
+
+            Pile<int> pileEntier = new Pile<int>(3);
+            pileEntier.Empiler(1);
+            pileEntier.Empiler(4);
+            pileEntier.Empiler(5);
+            Console.WriteLine(pileEntier.GetElement(2));
+            Console.WriteLine(pileEntier.GetElement(3));
+            pileEntier.Depiler();
+            Console.WriteLine(pileEntier.GetElement(3));
+
             #endregion
         }
     }

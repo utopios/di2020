@@ -14,7 +14,7 @@ namespace FormationCesiDi2020.Classes
 
         public void Empiler(T element)
         {
-            if(compteur < elements.Length - 1)
+            if(compteur < elements.Length)
             {
                 //elements[compteur] = element;
                 //compteur++;
@@ -32,9 +32,9 @@ namespace FormationCesiDi2020.Classes
 
         public T GetElement(int place)
         {
-            if(compteur > place && place >=0)
+            if(compteur > place-1 && place > 0)
             {
-                return elements[place];
+                return elements[place-1];
             }
             return default(T);
         }
