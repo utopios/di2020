@@ -8,6 +8,8 @@ namespace CompteBancaire.Classes
         private decimal solde;
         private int numero;
 
+        public event Action<int, decimal> ADecouvert;
+
         private static int compteur = 0;
         private Client client;
         private List<Operation> operations;
@@ -42,9 +44,13 @@ namespace CompteBancaire.Classes
 
         public virtual bool Retrait(Operation o)
         {
-            if(o.Montant < 0 && Solde >= (-1)*o.Montant) {
+            if(o.Montant < 0) {
                 Operations.Add(o);
                 solde += o.Montant;
+                if(solde < 0 && ADecouvert != null)
+                {
+                    ADecouvert(numero, solde);
+                }
                 return true;
             }
             return false;

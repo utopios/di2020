@@ -21,12 +21,19 @@ namespace CompteBancaire.Classes
         {
             Compte compte = new Compte(solde);
             compte.Client = client;
+            compte.ADecouvert += NotificationDecouvert;
             return compte;
         }
 
         public Compte RechercherCompte(int n)
         {
             return comptes.Find(c => c.Numero == n);
+        }
+
+
+        public void NotificationDecouvert(int numeroCompte, decimal solde)
+        {
+            Console.WriteLine($"Attention le numéro de compte {numeroCompte} est à decouvert de {solde}euros");
         }
     }
 }
