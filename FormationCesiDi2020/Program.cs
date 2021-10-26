@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using FormationCesiDi2020.Classes;
+using MySql.Data.MySqlClient;
 
 namespace FormationCesiDi2020
 {
@@ -418,26 +419,47 @@ namespace FormationCesiDi2020
             #endregion
 
             #region POO event
-            Voiture v = new Voiture() { Model = "ford", Prix = 20000 };
-            v.Promotion += NotificationMail;
-            v.Promotion += NotificationParSms;
-            string choix;
-            int compteurPromotion = 0;
-            do
-            {
-                Console.Write("Est ce qu'il y une promotion ? (o/n)");
-                choix = Console.ReadLine();
-                if(choix == "o")
-                {
+            //Voiture v = new Voiture() { Model = "ford", Prix = 20000 };
+            //v.Promotion += NotificationMail;
+            //v.Promotion += NotificationParSms;
+            //string choix;
+            //int compteurPromotion = 0;
+            //do
+            //{
+            //    Console.Write("Est ce qu'il y une promotion ? (o/n)");
+            //    choix = Console.ReadLine();
+            //    if(choix == "o")
+            //    {
                     
-                    decimal reduction = Convert.ToDecimal(Console.ReadLine());
-                    v.Reduction(reduction);
-                    if(++compteurPromotion > 2)
-                    {
-                        v.Promotion -= NotificationParSms;
-                    }
-                }
-            } while (choix != "0");
+            //        decimal reduction = Convert.ToDecimal(Console.ReadLine());
+            //        v.Reduction(reduction);
+            //        if(++compteurPromotion > 2)
+            //        {
+            //            v.Promotion -= NotificationParSms;
+            //        }
+            //    }
+            //} while (choix != "0");
+            #endregion
+
+            #region ADO.NET
+            MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;DataBase=DI2020;UserId=root;password=");
+            Console.WriteLine(connection.State);
+
+            //string request = "CREATE TABLE TODO (id int PRIMARY KEY auto_increment, content text not null)";
+
+            Console.Write("Merci de saisir le contenu de la todo : ");
+            string content = Console.ReadLine();
+            string request = "INSERT INTO TODO (content) values(@content)";
+            MySqlCommand command = new MySqlCommand(request, connection);
+            //Si on a des variables à passer à une requête on utilise les paramètres.
+            command.Parameters.Add(new MySqlParameter("@content", content));
+            connection.Open();
+
+            //Aucun retour de la requête, la méthode à utiliser est ExecuteNonQuery()
+            Console.WriteLine(command.ExecuteNonQuery());
+            //Liberer les ressources utilisées par la commande telque la connexion
+            command.Dispose();
+            connection.Close();
             #endregion
         }
 
