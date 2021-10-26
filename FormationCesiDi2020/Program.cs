@@ -430,7 +430,7 @@ namespace FormationCesiDi2020
             //    choix = Console.ReadLine();
             //    if(choix == "o")
             //    {
-                    
+
             //        decimal reduction = Convert.ToDecimal(Console.ReadLine());
             //        v.Reduction(reduction);
             //        if(++compteurPromotion > 2)
@@ -442,8 +442,8 @@ namespace FormationCesiDi2020
             #endregion
 
             #region ADO.NET
-            MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;DataBase=DI2020;UserId=root;password=");
-            Console.WriteLine(connection.State);
+            //MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;DataBase=DI2020;UserId=root;password=");
+            //Console.WriteLine(connection.State);
 
             //string request = "CREATE TABLE TODO (id int PRIMARY KEY auto_increment, content text not null)";
 
@@ -451,12 +451,12 @@ namespace FormationCesiDi2020
             //string content = Console.ReadLine();
             //string request = "INSERT INTO TODO (content) values(@content); SELECT LAST_INSERT_ID();";
 
-            string request = "SELECT content, id FROM TODO";
+            //string request = "SELECT content, id FROM TODO";
 
-            MySqlCommand command = new MySqlCommand(request, connection);
+            // MySqlCommand command = new MySqlCommand(request, connection);
             //Si on a des variables à passer à une requête on utilise les paramètres.
             //command.Parameters.Add(new MySqlParameter("@content", content));
-            connection.Open();
+            //connection.Open();
 
             //Aucun retour de la requête, la méthode à utiliser est ExecuteNonQuery()
             //Console.WriteLine(command.ExecuteNonQuery());
@@ -466,16 +466,29 @@ namespace FormationCesiDi2020
             //Console.WriteLine(id);
 
             //Pour executer une commande avec comme résultat des données à lire, on utilsie la méthode executeReader()
-            MySqlDataReader reader = command.ExecuteReader();
-            while(reader.Read())
-            {
-                Console.WriteLine($"Id : {reader.GetInt32(1)}, Content : {reader.GetString(0)}");
-            }
+            //MySqlDataReader reader = command.ExecuteReader();
+            //while(reader.Read())
+            //{
+            //    Console.WriteLine($"Id : {reader.GetInt32(1)}, Content : {reader.GetString(0)}");
+            //}
 
-            reader.Close();
-            //Liberer les ressources utilisées par la commande telque la connexion
-            command.Dispose();
-            connection.Close();
+            //reader.Close();
+            ////Liberer les ressources utilisées par la commande telque la connexion
+            //command.Dispose();
+            //connection.Close();
+            #endregion
+
+            #region correction contact
+            Contact contact = new Contact()
+            {
+                Nom = "abadi",
+                Prenom = "ihab",
+                Telephone = "060606060"
+            };
+            if(contact.Save())
+            {
+                Console.WriteLine("Contact ajouté avec l'id " + contact.Id);
+            }
             #endregion
         }
 
