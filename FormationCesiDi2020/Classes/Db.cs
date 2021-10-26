@@ -1,4 +1,6 @@
 ﻿using System;
+using MySql.Data.MySqlClient;
+
 namespace FormationCesiDi2020.Classes
 {
     public class Db
@@ -6,5 +8,9 @@ namespace FormationCesiDi2020.Classes
         public Db()
         {
         }
+        private static string connectionString = "Server=127.0.0.1;DataBase=DI2020;UserId=root;password=";
+        public static MySqlConnection Connection { get => new MySqlConnection(connectionString); }
+
+
     }
 }

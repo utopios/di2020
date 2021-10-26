@@ -479,15 +479,26 @@ namespace FormationCesiDi2020
             #endregion
 
             #region correction contact
-            Contact contact = new Contact()
+            //Contact contact = new Contact()
+            //{
+            //    Nom = "abadi",
+            //    Prenom = "ihab",
+            //    Telephone = "060606060"
+            //};
+            //if (contact.Save())
+            //{
+            //    Console.WriteLine("Contact ajouté avec l'id " + contact.Id);
+            //}
+
+            //Contact contact = Contact.GetContact("060606060");
+            //if(contact != null && contact.Delete())
+            //{
+            //    Console.WriteLine("Contact supprimé");
+            //}
+            List<Contact> contacts = Contact.GetContacts();
+            foreach(Contact c in contacts)
             {
-                Nom = "abadi",
-                Prenom = "ihab",
-                Telephone = "060606060"
-            };
-            if(contact.Save())
-            {
-                Console.WriteLine("Contact ajouté avec l'id " + contact.Id);
+                Console.WriteLine($"{c.Id} {c.Nom} {c.Prenom} {c.Telephone}");
             }
             #endregion
         }
