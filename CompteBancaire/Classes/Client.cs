@@ -33,6 +33,7 @@ namespace CompteBancaire.Classes
 
         public bool Save()
         {
+            
             request = "INSERT INTO client (nom, prenom, telephone) values(@nom, @prenom, @telephone); select last_insert_id()";
             connection = Db.Connection;
             command = new MySqlCommand(request, connection);
