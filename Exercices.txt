@@ -11,3 +11,6 @@ Exercice List
 Dans le TP employé, il faut remplacer l'utilisation des tableaux par des listes.
 
 
+Exercice Event
+Ajouter un event Adecouvert dans le compte bancaire, cet event doit indiquer le solde et le numéro de compte
+

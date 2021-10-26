@@ -413,8 +413,31 @@ namespace FormationCesiDi2020
             //string element = pileString.Search(search => search == "minet");
             //string elementToto = pileString.Search(search => search == "toto");
             //Exemple d'expression lambda avec les delegates.
-            List<string> liste = new List<string>() { "toto", "tata" };
-            liste.Find(x => x.Contains("t"));
+            //List<string> liste = new List<string>() { "toto", "tata" };
+            //liste.Find(x => x.Contains("t"));
+            #endregion
+
+            #region POO event
+            Voiture v = new Voiture() { Model = "ford", Prix = 20000 };
+            v.Promotion += NotificationMail;
+            v.Promotion += NotificationParSms;
+            string choix;
+            int compteurPromotion = 0;
+            do
+            {
+                Console.Write("Est ce qu'il y une promotion ? (o/n)");
+                choix = Console.ReadLine();
+                if(choix == "o")
+                {
+                    
+                    decimal reduction = Convert.ToDecimal(Console.ReadLine());
+                    v.Reduction(reduction);
+                    if(++compteurPromotion > 2)
+                    {
+                        v.Promotion -= NotificationParSms;
+                    }
+                }
+            } while (choix != "0");
             #endregion
         }
 
@@ -426,6 +449,17 @@ namespace FormationCesiDi2020
         static int Soustraction(int a, int b)
         {
             return a - b;
+        }
+
+
+        static void NotificationMail(string m, decimal p)
+        {
+            Console.WriteLine($"Une nouvelle promotion sur la voiture {m} avec le prix {p}, notification mail");
+        }
+
+        static void NotificationParSms(string m, decimal p)
+        {
+            Console.WriteLine($"Une nouvelle promotion sur la voiture {m} avec le prix {p}, notification sms");
         }
     }
 }
