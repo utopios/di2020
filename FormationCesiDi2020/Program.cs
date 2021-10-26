@@ -447,16 +447,32 @@ namespace FormationCesiDi2020
 
             //string request = "CREATE TABLE TODO (id int PRIMARY KEY auto_increment, content text not null)";
 
-            Console.Write("Merci de saisir le contenu de la todo : ");
-            string content = Console.ReadLine();
-            string request = "INSERT INTO TODO (content) values(@content)";
+            //Console.Write("Merci de saisir le contenu de la todo : ");
+            //string content = Console.ReadLine();
+            //string request = "INSERT INTO TODO (content) values(@content); SELECT LAST_INSERT_ID();";
+
+            string request = "SELECT content, id FROM TODO";
+
             MySqlCommand command = new MySqlCommand(request, connection);
             //Si on a des variables à passer à une requête on utilise les paramètres.
-            command.Parameters.Add(new MySqlParameter("@content", content));
+            //command.Parameters.Add(new MySqlParameter("@content", content));
             connection.Open();
 
             //Aucun retour de la requête, la méthode à utiliser est ExecuteNonQuery()
-            Console.WriteLine(command.ExecuteNonQuery());
+            //Console.WriteLine(command.ExecuteNonQuery());
+
+            //Dans le cadre ou la requete envoie un resultat unique => ExecuteScalar()
+            //int id = Convert.ToInt32(command.ExecuteScalar());
+            //Console.WriteLine(id);
+
+            //Pour executer une commande avec comme résultat des données à lire, on utilsie la méthode executeReader()
+            MySqlDataReader reader = command.ExecuteReader();
+            while(reader.Read())
+            {
+                Console.WriteLine($"Id : {reader.GetInt32(1)}, Content : {reader.GetString(0)}");
+            }
+
+            reader.Close();
             //Liberer les ressources utilisées par la commande telque la connexion
             command.Dispose();
             connection.Close();
