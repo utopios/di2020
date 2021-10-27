@@ -50,9 +50,17 @@ namespace coursWeb.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult Toto()
+        public IActionResult Toto(int id)
         {
+            ViewBag.Id = id;
             return View();
         }
+
+        [Route("tata/{param1?}")]
+        public IActionResult Tata(string param1)
+        {
+            return new ContentResult() { Content = param1 };
+        }
+
     }
 }
