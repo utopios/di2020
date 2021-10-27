@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using coursWeb.Models;
+using coursWeb.ViewModels;
 
 namespace coursWeb.Controllers
 {
@@ -21,7 +22,21 @@ namespace coursWeb.Controllers
         public IActionResult Index()
         {
             //return new ContentResult() { Content = "Bonjour tout le monde" };
-            return View();
+            //Pour passer des données du controller vers la vue,
+            Person p = new Person() { FirstName = "ihab", LastName = "abadi" };
+            List<string> listeStrings = new List<string>() { "toto", "tata", "titi" };
+            //On peut utiliser le viewData
+            //ViewData["maPersonne"] = p;
+            //ViewData["listeStrings"] = listeStrings;
+            //On peut utiliser le viewBag
+            //ViewBag.MaPersonne = p;
+            //ViewBag.ListeStrings = listeStrings;
+            HomeViewModel viewModel = new HomeViewModel()
+            {
+                Person = p,
+                ListeStrings = listeStrings
+            };
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

@@ -1,7 +1,42 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model HomeViewModel
+@*<div>
+        La personne est : @((ViewData["maPersonne"] as Person).FirstName) @((ViewData["maPersonne"] as Person).LastName)
+    </div>
 
+    <div>
+        @foreach(String s in ViewData["listeStrings"] as List<string>)
+                {
+                    <div>
+                        @s
+                    </div>
+                }
+    </div>*@
+@*<div>
+    La personne est : @ViewBag.MaPersonne.FirstName @ViewBag.MaPersonne.LastName
+</div>
+
+<div>
+    @foreach (String s in ViewBag.ListeStrings)
+    {
+        <div>
+            @s
+        </div>
+    }
+</div>*@
+<div>
+    @Model.Person.FirstName @Model.Person.LastName
+</div>
+<div>
+    @foreach (String s in Model.ListeStrings)
+    {
+        <div>
+            @s
+        </div>
+    }
+</div>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
