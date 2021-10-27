@@ -30,3 +30,10 @@ Créer l'architecture d'une application web qui permet gérer les contacts
 - Pour chaque contact ajoutez un lien pour afficher le détail du contact, ainsi qu'un lien pour supprimer le contact.
 - Ajoutez un formulaire pour ajouter un contact
 
+
+Exercice 2 Compte Bancaire ASP.NET CORE
+
+- Réalisez une application web qui permet de créer un compte bancaire.
+- Sur la page d'accueil, on peut effectuer une recherche par numéro de compte, on affichera les informations du compte
+après recherche (client, solde, listes opérations).
+- Après la recherche d'un compte, on peut effectuer un dépôt ou un retrait.
