@@ -26,3 +26,5 @@ Exercice 1 ASP.NET CORE
 Créer l'architecture d'une application web qui permet gérer les contacts
 (Page pour afficher les contacts, une page pour afficher un contact, une page pour ajouter un contact)
 
+- Sur la page d'accueil, affichez une liste de contacts récupérée à partir d'une base données.
+

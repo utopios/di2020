@@ -3,4 +3,21 @@
 *@
 @{
 }
+@model List<Contact>
 <h1>Liste contacts</h1>
+<div class="container">
+    @foreach(Contact c in Model)
+    {
+    <div class="row">
+        <div class="col">
+            @c.Nom
+        </div>
+        <div class="col">
+            @c.Prenom
+        </div>
+        <div class="col">
+            @c.Telephone
+        </div>
+    </div>
+    }
+</div>

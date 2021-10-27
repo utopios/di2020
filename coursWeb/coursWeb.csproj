@@ -7,5 +7,9 @@
   <ItemGroup>
     <Folder Include="Views\Contact\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Tools\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.27" />
   </ItemGroup>
 </Project>
