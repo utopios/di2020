@@ -20,3 +20,9 @@ Exercice ADO.NET
 Ecrire un programme qui permet d'ajouter, suppirmer, afficher à partir d'une base de données des contacts
 (Chaque contact a un id, nomn prenom, téléphone)
 
+
+Exercice 1 ASP.NET CORE
+
+Créer l'architecture d'une application web qui permet gérer les contacts
+(Page pour afficher les contacts, une page pour afficher un contact, une page pour ajouter un contact)
+

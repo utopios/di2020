@@ -20,6 +20,7 @@ namespace coursWeb.Controllers
 
         public IActionResult Index()
         {
+            //return new ContentResult() { Content = "Bonjour tout le monde" };
             return View();
         }
 
@@ -32,6 +33,11 @@ namespace coursWeb.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult Toto()
+        {
+            return View();
         }
     }
 }
