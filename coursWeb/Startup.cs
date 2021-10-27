@@ -52,6 +52,13 @@ namespace coursWeb
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "addContact",
+                    pattern: "ajouter-contact", new {
+                        controller = "Contact",
+                        action = "FormContact"
+                    });
             });
         }
     }
