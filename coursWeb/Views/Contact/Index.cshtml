@@ -5,19 +5,31 @@
 }
 @model List<Contact>
 <h1>Liste contacts</h1>
-<div class="container">
-    @foreach(Contact c in Model)
-    {
-    <div class="row">
-        <div class="col">
-            @c.Nom
-        </div>
-        <div class="col">
-            @c.Prenom
-        </div>
-        <div class="col">
-            @c.Telephone
-        </div>
+@if (ViewBag.Message != null)
+{
+    <div>
+        @ViewBag.Message
     </div>
+}
+<div class="container">
+    @foreach (Contact c in Model)
+    {
+        <div class="row">
+            <div class="col">
+                @c.Nom
+            </div>
+            <div class="col">
+                @c.Prenom
+            </div>
+            <div class="col">
+                @c.Telephone
+            </div>
+            <div class="col">
+                <a asp-controller="Contact" asp-action="DisplayContact" asp-route-id="@c.Id">Detail</a>
+            </div>
+            <div class="col">
+                <a asp-controller="Contact" asp-action="DeleteContact" asp-route-id="@c.Id">Supprimer</a>
+            </div>
+        </div>
     }
 </div>

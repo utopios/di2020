@@ -3,4 +3,24 @@
 *@
 @{
 }
+@model Contact
 <h1>Page d'un contact</h1>
+@if (Model == null)
+{
+    <div>
+        aucun contact avec cet id
+    </div>
+}
+else
+{
+    <div>
+        Nom : @Model.Nom
+    </div>
+    <div>
+        Prénom : @Model.Prenom
+    </div>
+    <div>
+        Téléphone : @Model.Telephone
+    </div>
+
+}

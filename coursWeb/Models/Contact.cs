@@ -77,6 +77,31 @@ namespace coursWeb.Models
             return contact;
         }
 
+        public static Contact GetContact(int id)
+        {
+            Contact contact = null;
+            request = "SELECT telephone, nom, prenom FROM contact where id = @id";
+            connection = Db.Connection;
+            command = new MySqlCommand(request, connection);
+            command.Parameters.Add(new MySqlParameter("id", id));
+            connection.Open();
+            reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                contact = new Contact()
+                {
+                    Id = id,
+                    Nom = reader.GetString(1),
+                    Prenom = reader.GetString(2),
+                    Telephone = reader.GetString(0)
+                };
+            }
+            reader.Close();
+            command.Dispose();
+            connection.Close();
+            return contact;
+        }
+
         public static List<Contact> GetContacts()
         {
             List<Contact> contacts = new List<Contact>();
