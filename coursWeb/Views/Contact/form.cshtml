@@ -4,3 +4,17 @@
 @{
 }
 <h1>Formulaire Contact</h1>
+<form class="container" asp-controller="Contact" asp-action="SubmitForm" method="post">
+    <div class="row m-1">
+        <input type="text" name="nom" placeholder="Nom du contact" class="col p-1 form-control" />
+    </div>
+    <div class="row m-1">
+        <input type="text" name="prenom" placeholder="Prénom du contact" class="col p-1 form-control" />
+    </div>
+    <div class="row m-1">
+        <input type="text" name="telephone" placeholder="Téléphone du contact" class="col p-1 form-control" />
+    </div>
+    <div class="row m-1">
+       <button type="submit" class="btn col p-1 btn-secondary">Valider</button>
+    </div>
+</form>

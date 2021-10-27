@@ -38,5 +38,17 @@ namespace coursWeb.Controllers
         {
             return View("form");
         }
+
+        public IActionResult SubmitForm(Contact contact)
+        {
+            if(contact.Save())
+            {
+                return RedirectToAction("Index", "Contact", new { message = "contact ajouté" });
+            }
+            else
+            {
+                return View("form");
+            }
+        }
     }
 }
