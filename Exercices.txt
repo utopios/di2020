@@ -28,4 +28,5 @@ Créer l'architecture d'une application web qui permet gérer les contacts
 
 - Sur la page d'accueil, affichez une liste de contacts récupérée à partir d'une base données.
 - Pour chaque contact ajoutez un lien pour afficher le détail du contact, ainsi qu'un lien pour supprimer le contact.
+- Ajoutez un formulaire pour ajouter un contact
 
