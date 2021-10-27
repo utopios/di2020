@@ -38,7 +38,7 @@ namespace CompteBancaire.Classes
         }
 
 
-        public List<Operation> GetOperations(int compteId)
+        public static List<Operation> GetOperations(int compteId)
         {
             List<Operation> operations = new List<Operation>();
             request = "SELECT montant from operation where compteId=@compteId";

@@ -5,7 +5,6 @@ namespace CompteBancaire.Classes
 {
     public class Banque
     {
-        private List<Compte> comptes;
         public Banque()
         {
         }
@@ -14,7 +13,12 @@ namespace CompteBancaire.Classes
 
         public Client CreationClient(string nom, string prenom, string telephone)
         {
-            return new Client(nom, prenom, telephone);
+            Client client = new Client(nom, prenom, telephone);
+            if (client.Save())
+            {
+                return client;
+            }
+            return null;
         }
 
         public Compte CreationCompte(Client client, decimal solde = 0)
@@ -22,12 +26,16 @@ namespace CompteBancaire.Classes
             Compte compte = new Compte(solde);
             compte.Client = client;
             compte.ADecouvert += NotificationDecouvert;
-            return compte;
+            if(compte.Save())
+            {
+                return compte;
+            }
+            return null;
         }
 
         public Compte RechercherCompte(int n)
         {
-            return comptes.Find(c => c.Numero == n);
+            return Compte.GetCompteById(n);
         }
 
 

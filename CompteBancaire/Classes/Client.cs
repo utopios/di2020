@@ -18,12 +18,17 @@ namespace CompteBancaire.Classes
         public string Prenom { get => prenom; set => prenom = value; }
         public string Telephone { get => telephone; set => telephone = value; }
         public int Id { get => id;  }
-        public Client(int i,string n, string p, string t)
+        public Client(string n, string p, string t)
         {
-            id = i;
             Nom = n;
             Prenom = p;
             Telephone = t;
+        }
+
+        public Client(int i, string n, string p, string t):this(n, p, t)
+        {
+            id = i;
+            
         }
 
         public override string ToString()
