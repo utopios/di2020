@@ -62,5 +62,21 @@ namespace coursWeb.Controllers
             return new ContentResult() { Content = param1 };
         }
 
+
+        public IActionResult Form()
+        {
+            return View();
+        }
+
+        //public IActionResult SubmitForm(string firstName, string lastName)
+        public IActionResult SubmitForm([Bind("FirstName","LastName")]Person p)
+        {
+            //Person p = new Person()
+            //{
+            //    FirstName = firstName,
+            //    LastName = lastName
+            //};
+            return RedirectToAction("Index");
+        }
     }
 }
