@@ -25,11 +25,16 @@ namespace CompteBancaire.Classes
             solde = 0;
         }
 
-
+        public Compte(decimal s, int n) : this(s)
+        {
+            solde = s;
+            numero = n;
+        }
 
         public Compte(decimal s) : this()
         {
             solde = s;
+
         }
 
         public decimal Solde { get => solde;}
@@ -120,7 +125,7 @@ namespace CompteBancaire.Classes
             reader = command.ExecuteReader();
             if(reader.Read())
             {
-                compte = new Compte(reader.GetDecimal(0));
+                compte = new Compte(reader.GetDecimal(0), numero);
                 clientId = reader.GetInt32(1);
             }
             reader.Close();

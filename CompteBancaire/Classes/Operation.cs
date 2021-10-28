@@ -14,6 +14,10 @@ namespace CompteBancaire.Classes
         private static MySqlConnection connection;
         private static MySqlCommand command;
         private static MySqlDataReader reader;
+        public Operation()
+        {
+
+        }
         public Operation(decimal m)
         {
             Montant = m;
@@ -25,7 +29,7 @@ namespace CompteBancaire.Classes
         public bool Save(int compteId)
         {
 
-            request = "INSERT INTO client (montant, compteId) values(@montant, @compteId);select last_insert_id()";
+            request = "INSERT INTO operation (montant, compteId) values(@montant, @compteId);select last_insert_id()";
             connection = Db.Connection;
             command = new MySqlCommand(request, connection);
             command.Parameters.Add(new MySqlParameter("@montant", Montant));

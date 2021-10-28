@@ -47,5 +47,33 @@ namespace correction_compte_bancaire.Controllers
             return RedirectToAction("FormCompte", "Compte", new { error = true, message = "Erreur d'insertion client" });
 
         }
+
+        public IActionResult Operation(string type, int compteId)
+        {
+            ViewBag.CompteId = compteId;
+            ViewBag.Type = type;
+            return View();
+        }
+
+        public IActionResult SubmitOperation(string type, int compteId, [Bind("Montant")] Operation operation)
+        {
+            Compte compte = Compte.GetCompteById(compteId);
+            if(type == "retrait")
+            {
+                operation.Montant *= -1;
+                if (!compte.Retrait(operation))
+                {
+                    return RedirectToAction("Operation", "Compte", new { error = true, Message = "Opération impossible" });
+                }
+            }
+            else if(type == "depot")
+            {
+                if (!compte.Depot(operation))
+                {
+                    return RedirectToAction("Operation", "Compte", new { error = true, Message = "Dépôt impossible" });
+                }
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

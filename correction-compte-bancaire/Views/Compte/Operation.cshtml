@@ -1,0 +1,14 @@
+﻿
+<form asp-controller="Compte" asp-action="SubmitOperation" method="post">
+    <div class="row justify-content-center m-1">
+        <h1>Type opération @ViewBag.Type</h1>
+        <input type="hidden" name="type" value="@ViewBag.Type" />
+        <input type="hidden" name="compteId" value="@ViewBag.CompteId" />
+    </div>
+    <div class="row m-1 justify-content-center">
+        <input type="number" name="Montant" placeholder="Montant de l'opération" class="form-control col-6 p-1" />
+    </div>
+    <div class="row m-1 justify-content-center">
+        <button type="submit" class="btn btn-secondary col-6 p-1"> Valider</button>
+    </div>
+</form>

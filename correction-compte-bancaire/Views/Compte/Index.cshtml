@@ -7,10 +7,33 @@
         <input type="text" class="col-5 form-control p-1" name="compteId" placeholder="Recherche par numéro de compte" />
         <button class="col-1 p-1 btn btn-primary" type="submit">Search</button>
     </form>
+    @if (Model != null)
+    {
+        <div class="row m-1">
+            <div class="col p-1">
+                Compte ID : @Model.Numero Solde : @Model.Solde euros
+            </div>
+            <div class="col p-1">
+                Client : @Model.Client.Nom @Model.Client.Prenom @Model.Client.Telephone
+            </div>
+        </div>
+        <div class="row m-1">
+            <h2 class="col p-1">Liste des opérations </h2>
+        </div>
+        @foreach (Operation o in Model.Operations)
+        {
+            <div class="row">
+                <div class="col">
+                    @o.Montant euros
+                </div>
+            </div>
+        }
+
+        <div class="row m-1">
+            <a class="btn btn-danger col p-1" asp-action="Operation" asp-route-compteId ="@Model.Numero" asp-controller="Compte" asp-route-type="retrait">Retrait</a>
+            <a class="btn btn-success col p-1" asp-action="Operation" asp-route-compteId ="@Model.Numero" asp-controller="Compte" asp-route-type="depot">Depot</a>
+        </div>
+
+    }
 </div>
-@if (Model != null)
-{
-    <div>
-        solde : @Model.Solde
-    </div>
-}
+
