@@ -12,5 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Compte\" />
+    <Folder Include="Services\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
 </Project>
