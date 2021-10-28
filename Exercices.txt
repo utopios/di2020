@@ -37,3 +37,9 @@ Exercice 2 Compte Bancaire ASP.NET CORE
 - Sur la page d'accueil, on peut effectuer une recherche par numéro de compte, on affichera les informations du compte
 après recherche (client, solde, listes opérations).
 - Après la recherche d'un compte, on peut effectuer un dépôt ou un retrait.
+
+Exercice Session Asp.net Core
+- dans une page on demande à l'utilisateur de saisir son email et son mot de passe, après comparaison avec les informations dans la base de données
+On sauvegarde l'email et mot de passe de l'utilisateur dans la session (En pratique on ne le fait jamais).
+- Dans les autres pages du site, on affichera l'adresse de l'utilisateur connecté.
+
