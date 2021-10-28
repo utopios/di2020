@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using coursWeb.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,9 @@ namespace coursWeb
             //Ajouter un services pour accéder au session
             services.AddSession();
             services.AddControllersWithViews();
+            services.AddHttpContextAccessor();
+            //Ajouter dans le conteneur de dependance le login
+            services.AddTransient<ILogin, LoginService>();
             //Configuration de Denpendancy Injection, IOC
         }
 
