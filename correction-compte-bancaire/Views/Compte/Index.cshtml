@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["title"] = "Accueil et recherche de compte";
+}
+@model Compte
+<div class="container">
+    <form asp-action="Index" asp-controller="Compte" class="row m-1 justify-content-center">
+        <input type="text" class="col-5 form-control p-1" name="compteId" placeholder="Recherche par numéro de compte" />
+        <button class="col-1 p-1 btn btn-primary" type="submit">Search</button>
+    </form>
+</div>
+@if (Model != null)
+{
+    <div>
+        solde : @Model.Solde
+    </div>
+}

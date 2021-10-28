@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompteBancaire", "CompteBan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "coursWeb", "coursWeb\coursWeb.csproj", "{0D2F6DFE-8260-409B-9020-66FFF42CAABB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "correction-compte-bancaire", "correction-compte-bancaire\correction-compte-bancaire.csproj", "{2FB61FC7-A00E-4D8E-B6F9-33D4D791747C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{0D2F6DFE-8260-409B-9020-66FFF42CAABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D2F6DFE-8260-409B-9020-66FFF42CAABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D2F6DFE-8260-409B-9020-66FFF42CAABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FB61FC7-A00E-4D8E-B6F9-33D4D791747C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FB61FC7-A00E-4D8E-B6F9-33D4D791747C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FB61FC7-A00E-4D8E-B6F9-33D4D791747C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FB61FC7-A00E-4D8E-B6F9-33D4D791747C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
