@@ -18,6 +18,11 @@ namespace CompteBancaire.Classes
         public string Prenom { get => prenom; set => prenom = value; }
         public string Telephone { get => telephone; set => telephone = value; }
         public int Id { get => id;  }
+
+        public Client()
+        {
+
+        }
         public Client(string n, string p, string t)
         {
             Nom = n;
@@ -39,7 +44,7 @@ namespace CompteBancaire.Classes
         public bool Save()
         {
             
-            request = "INSERT INTO client (nom, prenom, telephone) values(@nom, @prenom, @telephone); select last_insert_id()";
+            request = "INSERT INTO client (nom, prenom, telephone) values(@nom, @prenom, @telephone); select LAST_INSERT_ID()";
             connection = Db.Connection;
             command = new MySqlCommand(request, connection);
             command.Parameters.Add(new MySqlParameter("@nom", Nom));

@@ -22,5 +22,30 @@ namespace correction_compte_bancaire.Controllers
             }
             return View(compte);
         }
+
+        public IActionResult FormCompte(string message, bool error = false)
+        {
+            ViewBag.Error = error;
+            ViewBag.Message = message;
+            return View();
+        }
+
+
+        public IActionResult SubmitFormCompte([Bind("Nom, Prenom, Telephone")] Client client, decimal solde = 0)
+        {
+            Compte compte = null;
+            if(client.Save())
+            {
+                compte = new Compte(solde);
+                compte.Client = client;
+                if(compte.Save())
+                {
+                   return RedirectToAction("Index");
+                }
+                return RedirectToAction("FormCompte", "Compte", new { error = true, message = "Erreur d'insertion compte" });
+            }
+            return RedirectToAction("FormCompte", "Compte", new { error = true, message = "Erreur d'insertion client" });
+
+        }
     }
 }

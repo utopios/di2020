@@ -1,0 +1,28 @@
+﻿
+
+<form class="container" asp-action="SubmitFormCompte" asp-controller="Compte" method="post">
+    @if (ViewBag.Error)
+    {
+        <div class="row m-1 justify-content-center">
+            <div class="alert col-6 alert-danger">
+                @ViewBag.Message
+            </div>
+        </div>
+    }
+
+    <div class="row m-1 justify-content-center">
+        <input type="text" name="Nom" placeholder="Nom du client" class="form-control col-6 p-1" />
+    </div>
+    <div class="row m-1 justify-content-center">
+        <input type="text" name="Prenom" placeholder="Prénom du client" class="form-control col-6 p-1" />
+    </div>
+    <div class="row m-1 justify-content-center">
+        <input type="text" name="Telephone" placeholder="Téléphone du client" class="form-control col-6 p-1" />
+    </div>
+    <div class="row m-1 justify-content-center">
+        <input type="number" name="solde" placeholder="Solde initial" class="form-control col-6 p-1" />
+    </div>
+    <div class="row m-1 justify-content-center">
+        <button type="submit" class="btn btn-secondary col-6 p-1"> Valider</button>
+    </div>
+</form>
