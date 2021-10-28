@@ -23,6 +23,8 @@ namespace coursWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Ajouter un services pour accéder au session
+            services.AddSession();
             services.AddControllersWithViews();
             //Configuration de Denpendancy Injection, IOC
         }
@@ -46,7 +48,7 @@ namespace coursWeb
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
